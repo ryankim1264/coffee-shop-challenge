@@ -41,7 +41,7 @@ order3 = Order("maina" , "mango flavour" , 7.0)
 matches = [c for c in Order.all_coffees if c.name == "mango flavour"]
 if matches:
     mango = matches
-print(order2) 
-print(Order.all_coffees)   
+
+print(num_orders)   
  
         

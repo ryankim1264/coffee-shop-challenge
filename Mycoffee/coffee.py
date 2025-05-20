@@ -11,11 +11,20 @@ class Coffee :
     
     
     def orders(self):
-        from Mycoffee.order import Order
+        from Mycoffee import Order
         return [order for order in Order.all_orders if order.coffee == self] 
     
     def customers(self):
         return list({order.customer for order in self.orders()})
+    
+    def num_orders(self):
+        """Returns order count for this coffee"""
+        return len(self.orders())
+    
+    def average_price(self):
+        coffee_orders = self.orders()
+        total = sum(order.price for order in coffee_orders)
+        return total / len(coffee_orders)
     
     def __repr__(self):
         return f"Coffee = {self.name}"
