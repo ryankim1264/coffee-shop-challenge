@@ -18,7 +18,6 @@ class Coffee :
         return list({order.customer for order in self.orders()})
     
     def num_orders(self):
-        """Returns order count for this coffee"""
         return len(self.orders())
     
     def average_price(self):
