@@ -3,7 +3,8 @@ class Customer:
         self.name = name
         
     def create_order(self, coffee, price):
-        return Order(self, coffee, price)     
+        from Mycoffee import order as requests
+        return requests.Order(self, coffee, price)     
         
     @property
     def customer(self):   

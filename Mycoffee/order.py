@@ -27,7 +27,7 @@ class Order:
         Order.all_coffees.append(self.coffee)
         
     def __repr__(self):
-        return f"Order(customer={self.customer}, coffee={self.coffee}, price={self.price})"    
+        return f"customer={self.customer}, coffee={self.coffee}, price={self.price}"    
      
     def __str__(self):
         return f"{self.customer} ordered {self.coffee} for ${self.price}"
@@ -39,7 +39,7 @@ order2 = Order("reeeee" , "cappucinoo" , 9.0)
 order3 = Order("maina" , "mango flavour" , 7.0)
 
 
-
-print()   
+mango_flavor =("mango flavour")
+print(Order.all_orders)   
  
         

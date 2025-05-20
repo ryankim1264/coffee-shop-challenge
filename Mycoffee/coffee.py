@@ -11,19 +11,19 @@ class Coffee :
     
     
     def orders(self):
-        from Mycoffee import Order
-        return [order for order in Order.all_orders if order.coffee == self] 
+        from Mycoffee import Order as requests
+        return [requests for request in requests.Order.all_orders if request.order.coffee == self] 
     
     def customers(self):
-        return list({order.customer for order in self.orders()})
+        from Mycoffee import order as requests
+        return [requests for request in requests.Order.all_orders if request.order.coffee == self]
     
     def num_orders(self):
-        return len(self.orders())
+        from Mycoffee import order as requests
+        lists = [requests for request in requests.Order.all_orders if self == request.order.coffee]
     
     def average_price(self):
-        coffee_orders = self.orders()
-        total = sum(order.price for order in coffee_orders)
-        return total / len(coffee_orders)
+        return sum(order.price for order in self.orders()) / len(self.orders()) if self.orders() else 0
     
     def __repr__(self):
         return f"Coffee = {self.name}"
