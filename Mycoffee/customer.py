@@ -2,6 +2,9 @@ class Customer:
     def __init__(self, name):
         self.name = name
         
+    def create_order(self , coffee , price)
+        return    
+        
     @property
     def customer(self):   
         return self._name

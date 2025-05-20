@@ -9,6 +9,14 @@ class Coffee :
     def Coffee(self):
         return self._name 
     
+    
+    def orders(self):
+        from Mycoffee.order import Order
+        return [order for order in Order.all_orders if order.coffee == self] 
+    
+    def customers(self):
+        return list({order.customer for order in self.orders()})
+    
     def __repr__(self):
         return f"Coffee = {self.name}"
 
